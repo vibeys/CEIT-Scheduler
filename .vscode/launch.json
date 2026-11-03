@@ -1,0 +1,8 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    { "name": "START THE SERVER", "type": "node", "request": "launch", "program": "${workspaceFolder}/server/index.js", "console": "integratedTerminal" },
+    { "name": "PC app (from source)", "type": "node", "request": "launch", "program": "${workspaceFolder}/scripts/run-electron.js", "console": "integratedTerminal" },
+    { "name": "Run self-test", "type": "node", "request": "launch", "program": "${workspaceFolder}/scripts/selftest.js", "console": "integratedTerminal" }
+  ]
+}

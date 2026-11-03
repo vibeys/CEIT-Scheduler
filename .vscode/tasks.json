@@ -1,0 +1,9 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    { "label": "Start the server", "type": "npm", "script": "start", "problemMatcher": [] },
+    { "label": "Open firewall (Windows, once)", "type": "npm", "script": "firewall", "problemMatcher": [] },
+    { "label": "Open the PC app", "type": "npm", "script": "client", "problemMatcher": [] },
+    { "label": "Build PC installer", "type": "npm", "script": "dist", "problemMatcher": [] }
+  ]
+}

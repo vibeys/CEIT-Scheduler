@@ -1,0 +1,10 @@
+{
+  "name": "ceit-scheduler-pc",
+  "productName": "CEIT Scheduler",
+  "version": "1.0.0",
+  "description": "CEIT Scheduler - PC app. Connects to the CEIT server on your Wi-Fi / LAN.",
+  "main": "main.js",
+  "author": { "name": "CEIT" },
+  "license": "UNLICENSED",
+  "private": true
+}

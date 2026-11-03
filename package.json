@@ -1,0 +1,81 @@
+{
+  "name": "ceit-scheduler",
+  "productName": "CEIT Scheduler",
+  "version": "1.0.0",
+  "description": "CEIT Schedule Manager - one server laptop, PC app and phone app over the same Wi-Fi / LAN",
+  "private": true,
+  "license": "UNLICENSED",
+  "author": {
+    "name": "CEIT"
+  },
+  "scripts": {
+    "start": "node server/index.js",
+    "server": "node server/index.js",
+    "client": "node scripts/run-electron.js",
+    "test": "node scripts/selftest.js",
+    "firewall": "node scripts/firewall.js",
+    "sync": "node scripts/sync-shell.js",
+    "dist": "node scripts/build-installer.js",
+    "apk": "node scripts/build-apk.js",
+    "reset-admin": "node scripts/reset-admin.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "qrcode": "^1.5.4"
+  },
+  "devDependencies": {
+    "electron": "44.7.0",
+    "electron-builder": "^26.15.3",
+    "resedit": "^3.1.0"
+  },
+  "build": {
+    "appId": "com.ceit.scheduler",
+    "productName": "CEIT Scheduler",
+    "artifactName": "CEIT-Scheduler-PC-Setup-${version}.exe",
+    "copyright": "CEIT Scheduler",
+    "directories": {
+      "app": "client-pc",
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "asar": true,
+    "electronDist": "node_modules/electron/dist",
+    "afterPack": "scripts/after-pack.js",
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.ico",
+      "signAndEditExecutable": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "CEIT Scheduler",
+      "uninstallDisplayName": "CEIT Scheduler",
+      "menuCategory": false,
+      "installerIcon": "build/icon.ico",
+      "uninstallerIcon": "build/icon.ico",
+      "installerSidebar": "build/installerSidebar.bmp",
+      "uninstallerSidebar": "build/installerSidebar.bmp",
+      "runAfterFinish": true,
+      "deleteAppDataOnUninstall": true,
+      "differentialPackage": false,
+      "displayLanguageSelector": false,
+      "language": "1033",
+      "allowElevation": false
+    },
+    "files": [
+      "**/*",
+      "!**/node_modules/**"
+    ]
+  }
+}

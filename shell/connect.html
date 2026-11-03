@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CEIT Scheduler</title><link rel="icon" type="image/png" href="assets/favicon.png"><link rel="stylesheet" href="css/style.css">
+<style>
+ .connect .box{gap:12px}
+ .devline{display:flex;align-items:center;justify-content:center;gap:8px;font-size:.78rem;color:var(--mu);flex-wrap:wrap}
+ .devline i{width:8px;height:8px;border-radius:50%;background:var(--ok);flex:none}.devline.bad i{background:var(--bad)}.devline.bad{color:var(--bad)}
+ .devline b{color:var(--tx);font-weight:600}
+ .cstat{min-height:44px;font-size:.92rem;color:var(--tx);display:flex;align-items:center;justify-content:center;gap:10px;text-align:center;line-height:1.45}
+ .cstat.bad{color:var(--bad)}
+ .spin{width:16px;height:16px;border:2px solid var(--line);border-top-color:var(--ac);border-radius:50%;animation:sp .9s linear infinite;flex:none}
+ @keyframes sp{to{transform:rotate(360deg)}}
+ .manual{display:grid;grid-template-columns:1fr 92px;gap:10px;text-align:left}.manual .btn{grid-column:1/-1}
+ .connect .crl{max-height:230px}
+ .connect small.note{color:var(--mu);line-height:1.5}
+ .row2{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+</style></head>
+<body class="login connect">
+<form id="man" class="box" autocomplete="off">
+ <div class="logo biglogo"><img src="assets/logo.png" alt="CEIT logo"></div>
+ <span class="eyebrow">College of Engineering &amp; Information Technology</span>
+ <h1>Connect to the server</h1>
+ <div class="devline" id="dev"><i></i><span>Checking this device…</span></div>
+ <div class="cstat" id="stat"><span class="spin"></span><span>Starting…</span></div>
+ <div id="found" class="crl" hidden></div>
+ <div class="rule"></div>
+ <small class="eyebrow" style="text-align:center">Or type the server address</small>
+ <div class="manual"><label>Server IP address<input id="host" inputmode="decimal" autocapitalize="none" spellcheck="false" placeholder="192.168.1.20"></label><label>Port<input id="port" inputmode="numeric" value="8484"></label><button class="btn" id="go">Connect</button></div>
+ <div class="row2"><button type="button" class="crlink" id="scan">Search again</button><button type="button" class="crlink" id="forget" hidden>Forget saved server</button></div>
+ <small class="note" id="hint">The server laptop must be on and running the CEIT Scheduler server. This device must be on the same Wi-Fi or LAN.</small>
+</form>
+<script src="connect.js"></script>
+</body></html>

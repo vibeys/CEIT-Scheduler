@@ -1,0 +1,2 @@
+oracleJdk-27/lib/modules filter=lfs diff=lfs merge=lfs -text
+dist/CEIT-Scheduler-PC-Setup-1.0.0.exe filter=lfs diff=lfs merge=lfs -text
